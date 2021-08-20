@@ -25,6 +25,8 @@ const allFeedback = (state = [], action) => {
             return [...state, action.payload];
         case 'ADD_COMMENTS':
             return [...state, action.payload];
+        case 'SUBMIT_AND_RESET':
+            return [...state, action.payload];
     }
     return state;
 }

@@ -12,6 +12,7 @@ function Feeling () {
             <div>
                 <input
                     type="number"
+                    
                     onChange={(event) => setDailyMood(event.target.value)}
                     value={dailyMood}
 
