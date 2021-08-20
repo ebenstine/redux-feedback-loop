@@ -1,29 +1,32 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 
 function Review() {
-    const review = useSelector(store => store.allFeedback)
+    const history = useHistory();
+    const feedback = useSelector(store => store.allFeedback)
 
     const submitFeedback = () => {
         axios({
             method:'POST',
-            url: '/feedback',
-            data: {
-                feeling: review[0],
-                understanding: review[1],
-                support: review[2],
-                comments: review[3]
-            }
-        })
+            url: '/submitted',
+            data: feedback
+        }).then((response) => {
+            console.log('feedback submitted');
+        }).catch((error) =>{
+            console.log('POST error', error);
+        });
+        history.push('/submitted')
     }
 
     return (
         <>
-        <h2>Thank for providing your feedback</h2>
-        <h3>Feelings: {review[0]}</h3>
-        <h3>Understanding: {review[1]}</h3>
-        <h3>Support: {review[2]}</h3>
-        <h3>Comments: {review[3]}</h3>
+        <h2>Today's Reflection</h2>
+        <h3>Feelings: {feedback[0]}</h3>
+        <h3>Understanding: {feedback[1]}</h3>
+        <h3>Support: {feedback[2]}</h3>
+        <h3>Comments: {feedback[3]}</h3>
         <button onClick={submitFeedback}>Submit</button>
         
         </>
