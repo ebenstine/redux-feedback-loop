@@ -19,7 +19,7 @@ function Feeling () {
                 <Link to={"/comments"}>
                     <button
                         onClick={() => dispatch({
-                            type: 'ADD_DAILY_MOOD',
+                            type: 'ADD_DAILY_SUPPORT',
                             payload: dailySupport
                         })}
                     >Next</button>
