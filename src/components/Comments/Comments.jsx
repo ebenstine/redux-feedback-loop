@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Comments () {
-    const dispatch = UseDispatch();
-    const [comments, setComment] = useState('')
+    const dispatch = useDispatch();
+    const [comments, setComments] = useState('')
 
     return (
         <>

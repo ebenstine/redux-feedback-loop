@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Feeling () {
-    const dispatch = UseDispatch();
+    const dispatch = useDispatch();
     const [dailyMood, setDailyMood] = useState('');
 
     return (
