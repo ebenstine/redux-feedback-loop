@@ -15,10 +15,24 @@ import {
     Provider
 } from 'react-redux';
 
+const allFeedback = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_DAILY_MOOD':
+            return [...state, action.payload];
+        case 'ADD_DAILY_COMPREHENSION':
+            return [...state, action.payload];
+        case 'ADD_DAILY_SUPPORT':
+            return [...state, action.payload];
+        case 'ADD_COMMENTS':
+            return [...state, action.payload];
+    }
+    return state;
+}
 
 
 const storeInstance = createStore(
     combineReducers({
+        allFeedback
 
     }),
     applyMiddleware(logger)
