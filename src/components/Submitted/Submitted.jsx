@@ -6,7 +6,7 @@ function Submitted() {
     const history = useHistory();
     const onButtonClick = () => {
         dispatch({
-            type: 'SUBMIT_AND_RESET'
+            type: 'SUBMIT_AND_RESET',
         });
         history.push("/")
     }

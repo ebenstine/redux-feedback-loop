@@ -1,10 +1,29 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-function Feeling () {
+function Supported () {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [dailySupport, setDailySupport] = useState('');
+
+    const onButtonClick = () => {
+        if (dailySupport === ''){
+            alert('Please input a score!')
+        } else if (dailySupport < 0) {
+            alert('Please enter a number 1-5')
+            setDailySupport(0);
+        } else if (dailySupport > 5) {
+            alert('Please enter a number 1-5')
+            setDailySupport(5);
+        } else {
+        dispatch({
+            type: 'ADD_DAILY_SUPPORT',
+            payload: dailySupport
+        });
+        history.push('/comments');
+        }
+    }
 
     return (
         <>
@@ -16,17 +35,15 @@ function Feeling () {
                     value={dailySupport}
 
                 />
-                <Link to={"/comments"}>
+                
                     <button
-                        onClick={() => dispatch({
-                            type: 'ADD_DAILY_SUPPORT',
-                            payload: dailySupport
-                        })}
-                    >Next</button>
-                </Link>
-            </div>
+                        onClick={onButtonClick}
+                            
+                    >Next
+                    </button>
+               </div>
         </>
     )
 }
 
-export default Feeling;
+export default Supported;

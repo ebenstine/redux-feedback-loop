@@ -1,10 +1,29 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Feeling () {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [dailyMood, setDailyMood] = useState('');
+
+    const onButtonClick = () => {
+        if (dailyMood === ''){
+            alert('Please input a score!')
+        } else if (dailyMood < 0) {
+            alert('Please enter a number 1-5')
+            setDailyMood(0);
+        } else if (dailyMood > 5) {
+            alert('Please enter a number 1-5')
+            setDailyMood(5);
+        } else {
+        dispatch({
+            type: 'ADD_FEELING_SCORE',
+            payload: dailyMood
+        });
+        history.push('/understanding');
+        }
+    }
 
     return (
         <>
@@ -12,19 +31,17 @@ function Feeling () {
             <div>
                 <input
                     type="number"
-                    
-                    onChange={(event) => setDailyMood(event.target.value)}
                     value={dailyMood}
-
+                    onChange={(event) => setDailyMood(event.target.value)}
+                    
                 />
-                <Link to={"/understanding"}>
-                    <button
-                        onClick={() => dispatch({
-                            type: 'ADD_DAILY_MOOD',
-                            payload: dailyMood
-                        })}
-                    >Next</button>
-                </Link>
+                
+                <button
+                        onClick={onButtonClick}
+                           
+                    >Next
+                </button>
+                
             </div>
         </>
     )

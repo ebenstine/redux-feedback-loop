@@ -1,11 +1,20 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 function Comments () {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [comments, setComments] = useState('')
 
+    const onButtonClick = () => {
+        dispatch({
+            type: 'ADD_COMMENTS',
+            payload: comments
+        });
+        history.push('/review');
+    }
     return (
         <>
             <h2>Anything you'd like us to know?</h2>
@@ -16,14 +25,12 @@ function Comments () {
                     value={comments}
 
                 />
-                <Link to={"/review"}>
+                
                     <button
-                        onClick={() => dispatch({
-                            type: 'ADD_COMMENTS',
-                            payload: comments
-                        })}
-                    >Next</button>
-                </Link>
+                        onClick={onButtonClick}
+                    >Next
+                    </button>
+                
             </div>
         </>
     )

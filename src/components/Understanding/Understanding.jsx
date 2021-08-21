@@ -1,10 +1,29 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Understanding () {
     const dispatch = useDispatch();
+    const history = useHistory();
     const [dailyComprehension, setDailyComprehension] = useState('');
+
+    const onButtonClick = () => {
+        if (dailyComprehension === ''){
+            alert('Please assign yourself a value')
+        }   else if (dailyComprehension < 0){
+            alert('The range is 1-5')
+            setDailyComprehension(0);
+        }   else if (dailyComprehension > 5){
+            alert('The range is 1-5')
+            setDailyComprehension(5);
+        }   else {
+            dispatch({
+               type: 'ADD_DAILY_COMPREHENSION',
+               payload: dailyComprehension
+            });
+            history.push('/supported')
+        }
+    }
 
     return (
         <>
@@ -16,15 +35,11 @@ function Understanding () {
                     value={dailyComprehension}
 
                 />
-                <Link to={"/supported"}>
+                
                     <button
-                        onClick={() => dispatch({
-                            type: 'ADD_DAILY_COMPREHENSION',
-                            payload: dailyComprehension
-                        })}
+                        onClick={onButtonClick}
                     >Next</button>
-                </Link>
-            </div>
+               </div>
         </>
     )
 }

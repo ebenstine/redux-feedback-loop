@@ -30,12 +30,12 @@ function App() {
         <Supported />
       </Route>
 
-      <Route path="/review" exact>
-        <Review />
-      </Route>
-
       <Route path="/comments" exact>
         <Comments />
+      </Route>
+
+      <Route path="/review" exact>
+        <Review />
       </Route>
 
       <Route path="/submitted" exact>
