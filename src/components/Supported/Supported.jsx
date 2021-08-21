@@ -9,7 +9,7 @@ function Supported () {
 
     const onButtonClick = () => {
         if (dailySupport === ''){
-            alert('Please input a score!')
+            alert('Please input a value')
         } else if (dailySupport < 0) {
             alert('Please enter a number 1-5')
             setDailySupport(0);

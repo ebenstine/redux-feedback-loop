@@ -6,14 +6,14 @@ function Submitted() {
     const history = useHistory();
     const onButtonClick = () => {
         dispatch({
-            type: 'SUBMIT_AND_RESET',
+            type: 'SUBMIT_RESET',
         });
         history.push("/")
     }
     return (
         <>
         <h1>Thank you for your feedback!</h1>
-        <button onClick={onButtonClick}>Any new thoughts?</button>
+        <button onClick={onButtonClick}>Wait, was there something else?</button>
         </>
     )
 

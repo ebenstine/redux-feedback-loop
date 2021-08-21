@@ -11,10 +11,10 @@ function Understanding () {
         if (dailyComprehension === ''){
             alert('Please assign yourself a value')
         }   else if (dailyComprehension < 0){
-            alert('The range is 1-5')
+            alert('Oof ok, but the range is 1-5')
             setDailyComprehension(0);
         }   else if (dailyComprehension > 5){
-            alert('The range is 1-5')
+            alert('Awesome, but the range is 1-5')
             setDailyComprehension(5);
         }   else {
             dispatch({

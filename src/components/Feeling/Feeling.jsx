@@ -9,7 +9,7 @@ function Feeling () {
 
     const onButtonClick = () => {
         if (dailyMood === ''){
-            alert('Please input a score!')
+            alert('Please evaluate your mood today on a scale of 1-5')
         } else if (dailyMood < 0) {
             alert('Please enter a number 1-5')
             setDailyMood(0);
@@ -18,7 +18,7 @@ function Feeling () {
             setDailyMood(5);
         } else {
         dispatch({
-            type: 'ADD_FEELING_SCORE',
+            type: 'ADD_DAILY_MOOD',
             payload: dailyMood
         });
         history.push('/understanding');
@@ -37,9 +37,8 @@ function Feeling () {
                 />
                 
                 <button
-                        onClick={onButtonClick}
-                           
-                    >Next
+                    onClick={onButtonClick}
+                >Next
                 </button>
                 
             </div>

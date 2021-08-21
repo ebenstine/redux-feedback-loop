@@ -17,7 +17,7 @@ function Comments () {
     }
     return (
         <>
-            <h2>Anything you'd like us to know?</h2>
+            <h2>Is there anything else on your mind?</h2>
             <div>
                 <input
                     type="text"
