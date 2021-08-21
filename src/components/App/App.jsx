@@ -9,39 +9,45 @@ import Review from '../Review/Review';
 import Submitted from '../Submitted/Submitted';
 
 
-function App() {
 
+function App() {
+  
   return (
     <div className='App'>
       <Router>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
-      </header>
-      <Route path="/" exact>
-        <Feeling />
-      </Route>
+        <header className='App-header'>
+          <h1 className='App-title'>Feedback!</h1>
+          <h4>Don't forget it!</h4>
+        </header>
+        <Route path="/" exact>
+          <Feeling 
+          />
+        </Route>
 
-      <Route path="/understanding" exact>
-        <Understanding />
-      </Route>
+        <Route path="/understanding">
+          <Understanding
+          />
+        </Route>
 
-      <Route path="/supported" exact>
-        <Supported />
-      </Route>
+        <Route path="/supported">
+          <Supported 
+          />
+        </Route>
 
-      <Route path="/comments" exact>
-        <Comments />
-      </Route>
+        <Route path="/comments">
+          <Comments 
+          />
+        </Route>
 
-      <Route path="/review" exact>
-        <Review />
-      </Route>
+        <Route path="/review">
+          <Review />
+        </Route>
 
-      <Route path="/submitted" exact>
-        <Submitted />
-      </Route>
-    </Router>
+        <Route path="/submitted">
+          <Submitted />
+        </Route>
+
+        </Router>
     </div>
   );
 }

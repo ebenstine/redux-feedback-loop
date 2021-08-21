@@ -33,7 +33,7 @@ function Review() {
         }).catch((error) =>{
             console.log('BIGTIME POST error', error);
         });
-        history.push('/submitted')
+        history.push('/submitted');
         }
     }
     return (
