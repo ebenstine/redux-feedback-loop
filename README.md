@@ -4,6 +4,8 @@
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This application creates several input form pages.  Once a value is inputted, the page pushes forward to the next input. The final page documents lists the responses for the user and offers the option to submit.  Once submitted, the user cannot re-submit responses.  The responses are sent to the server.
+
+
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

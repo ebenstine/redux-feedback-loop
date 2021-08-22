@@ -10,11 +10,11 @@ function Feeling () {
     const onButtonClick = () => {
         if (dailyMood === ''){
             alert('Please evaluate your mood today on a scale of 1-5')
-        } else if (dailyMood < 0) {
-            alert('Please enter a number 1-5')
+        } else if (dailyMood < 1) {
+            alert('Oof ok, but the range is 1-5')
             setDailyMood(0);
         } else if (dailyMood > 5) {
-            alert('Please enter a number 1-5')
+            alert('Awesome, but the range is 1-5')
             setDailyMood(5);
         } else {
         dispatch({
@@ -31,6 +31,7 @@ function Feeling () {
             <div>
                 <input
                     type="number"
+                    placeholder="enter 1-5"
                     value={dailyMood}
                     onChange={(event) => setDailyMood(event.target.value)}
                     

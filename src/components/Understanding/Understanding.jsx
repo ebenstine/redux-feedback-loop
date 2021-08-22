@@ -10,7 +10,7 @@ function Understanding () {
     const onButtonClick = () => {
         if (dailyComprehension === ''){
             alert('Please assign yourself a value')
-        }   else if (dailyComprehension < 0){
+        }   else if (dailyComprehension < 1){
             alert('Oof ok, but the range is 1-5')
             setDailyComprehension(0);
         }   else if (dailyComprehension > 5){
@@ -31,6 +31,7 @@ function Understanding () {
             <div>
                 <input
                     type="number"
+                    placeholder="enter 1-5"
                     onChange={(event) => setDailyComprehension(event.target.value)}
                     value={dailyComprehension}
 

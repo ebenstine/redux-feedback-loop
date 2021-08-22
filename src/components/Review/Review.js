@@ -11,9 +11,10 @@ function Review() {
 
 
     const submitFeedback = () => {
+        
         if (feedback.length !== 4){
             alert ('You have given an answer, LET IT BE')
-            dispatch({
+            dispatch({ 
             type: 'SUBMIT_RESET',
         });
         history.push("/")
