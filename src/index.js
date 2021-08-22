@@ -5,14 +5,14 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import logger from 'redux-logger';
 
-//redux stuff
+//redux necessities
 import {
     createStore,
     combineReducers,
     applyMiddleware
 } from 'redux';
 import { Provider } from 'react-redux';
-
+//single reducer which can sort all data according to the function
 const allFeedback = (state = [], action) => {
     switch (action.type) {
         case 'ADD_DAILY_MOOD':
@@ -29,7 +29,7 @@ const allFeedback = (state = [], action) => {
     return state;
 }
 
-
+//use the reducer in the store
 const storeInstance = createStore(
     combineReducers({
         allFeedback

@@ -6,7 +6,7 @@ function Understanding () {
     const dispatch = useDispatch();
     const history = useHistory();
     const [dailyComprehension, setDailyComprehension] = useState('');
-
+//logic to ensure the input is properly limited
     const onButtonClick = () => {
         if (dailyComprehension === ''){
             alert('Please assign yourself a value')
@@ -17,6 +17,7 @@ function Understanding () {
             alert('Awesome, but the range is 1-5')
             setDailyComprehension(5);
         }   else {
+            //dispatch statement
             dispatch({
                type: 'ADD_DAILY_COMPREHENSION',
                payload: dailyComprehension
@@ -24,7 +25,7 @@ function Understanding () {
             history.push('/supported')
         }
     }
-
+//appending data
     return (
         <>
             <h2>How would you rate your comprehension today?</h2>

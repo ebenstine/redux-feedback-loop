@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-
+//no limitation needed here because a comment is not required
 function Comments () {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -10,11 +10,13 @@ function Comments () {
 
     const onButtonClick = () => {
         dispatch({
+            //dispatch statement
             type: 'ADD_COMMENTS',
             payload: comments
         });
         history.push('/review');
     }
+//appending data
     return (
         <>
             <h2>Is there anything else on your mind?</h2>

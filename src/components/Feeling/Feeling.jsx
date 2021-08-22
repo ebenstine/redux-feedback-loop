@@ -6,7 +6,7 @@ function Feeling () {
     const dispatch = useDispatch();
     const history = useHistory();
     const [dailyMood, setDailyMood] = useState('');
-
+//logic to ensure the input is properly limited
     const onButtonClick = () => {
         if (dailyMood === ''){
             alert('Please evaluate your mood today on a scale of 1-5')
@@ -18,13 +18,14 @@ function Feeling () {
             setDailyMood(5);
         } else {
         dispatch({
+            //dispatch statement
             type: 'ADD_DAILY_MOOD',
             payload: dailyMood
         });
         history.push('/understanding');
         }
     }
-
+//appending data
     return (
         <>
             <h2>How are you feeling about today?</h2>

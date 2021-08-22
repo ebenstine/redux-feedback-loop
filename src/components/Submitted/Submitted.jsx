@@ -6,11 +6,12 @@ function FeedbackSubmitted() {
     const history = useHistory();
     const onButtonClick = () => {
         dispatch({
+            //dispatch statement
             type: 'RESET_FEEDBACK',
         });
         history.push("/")
     }
-
+//appending data
     return (
         <>
         <h1>Thank you for your feedback!</h1>

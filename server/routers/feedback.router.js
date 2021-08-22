@@ -2,7 +2,7 @@ const express = require ('express');
 const router = express.Router();
 const pool = require ('../modules/pool');
 
-
+//setting up router to post data to sql
 router.post('/', (req, res) => {
     let newFeedback = req.body;
     const queryText = `

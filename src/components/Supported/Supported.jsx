@@ -6,7 +6,7 @@ function Supported () {
     const dispatch = useDispatch();
     const history = useHistory();
     const [dailySupport, setDailySupport] = useState('');
-
+//logic to ensure the input is properly limited
     const onButtonClick = () => {
         if (dailySupport === ''){
             alert('Please input a value')
@@ -17,6 +17,7 @@ function Supported () {
             alert('Awesome, but the range is 1-5')
             setDailySupport(5);
         } else {
+        //dispatch statement
         dispatch({
             type: 'ADD_DAILY_SUPPORT',
             payload: dailySupport
@@ -24,7 +25,7 @@ function Supported () {
         history.push('/comments');
         }
     }
-
+//appending data
     return (
         <>
             <h2>How well do you feel you were supported today?</h2>
