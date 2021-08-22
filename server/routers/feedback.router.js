@@ -5,11 +5,11 @@ const pool = require ('../modules/pool');
 
 router.post('/', (req, res) => {
     let newFeedback = req.body;
-    let queryText = `
+    const queryText = `
     INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);
 `;
-    let sqlParams = [
+    const sqlParams = [
         newFeedback.feeling,
         newFeedback.understanding,
         newFeedback.support,

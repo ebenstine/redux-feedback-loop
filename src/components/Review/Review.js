@@ -11,15 +11,15 @@ function Review() {
 
 
     const submitFeedback = () => {
-        if (feedback.length > 4){
-            alert ('Cannot revisit given answers')
+        if (feedback.length !== 4){
+            alert ('You have given an answer, LET IT BE')
             dispatch({
             type: 'SUBMIT_RESET',
         });
         history.push("/")
         } else {
         axios({
-            type:'POST',
+            method:'POST',
             url: '/feedback',
             data: {
                 feeling: feedback[0],
@@ -31,7 +31,7 @@ function Review() {
             console.log(response.data);
             console.log('feedback submitted');
         }).catch((error) =>{
-            console.log('BIGTIME POST error', error);
+            console.log('POST error', error);
         });
         history.push('/submitted');
         }
