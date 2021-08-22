@@ -32,7 +32,7 @@ function Supported () {
             <div>
                 <input
                     type="number"
-                    placeholder="enter 1-5"
+                    placeholder="scale of 1-5"
                     onChange={(event) => setDailySupport(event.target.value)}
                     value={dailySupport}
 

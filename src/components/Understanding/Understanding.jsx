@@ -32,7 +32,7 @@ function Understanding () {
             <div>
                 <input
                     type="number"
-                    placeholder="enter 1-5"
+                    placeholder="scale of 1-5"
                     onChange={(event) => setDailyComprehension(event.target.value)}
                     value={dailyComprehension}
 
