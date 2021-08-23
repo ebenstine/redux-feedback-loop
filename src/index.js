@@ -25,6 +25,8 @@ const allFeedback = (state = [], action) => {
             return [...state, action.payload];
         case 'SUBMIT_RESET':
             return [];
+        case 'GO_BACK':
+            return state.splice(0, state.length-1);
     }
     return state;
 }

@@ -25,6 +25,12 @@ function Understanding () {
             history.push('/supported')
         }
     }
+    const backFromUnderstanding = () => {
+        dispatch({
+            type: 'RESET_FEEDBACK'
+        });
+        history.push('/')
+    }
 //appending data
     return (
         <>
@@ -41,6 +47,9 @@ function Understanding () {
                     <button
                         onClick={onButtonClick}
                     >Next</button>
+                    <button 
+                        onClick={backFromUnderstanding}
+                    >Go Back</button>
                </div>
         </>
     )

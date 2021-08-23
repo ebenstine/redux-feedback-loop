@@ -25,6 +25,12 @@ function Supported () {
         history.push('/comments');
         }
     }
+    const backFromSupported = () => {
+        dispatch({
+            type: 'GO_BACK'
+        });
+        history.push('/understanding')
+    }
 //appending data
     return (
         <>
@@ -43,6 +49,11 @@ function Supported () {
                             
                     >Next
                     </button>
+                    <button 
+                        onClick={backFromSupported}
+                    >Go Back
+                    </button>
+                
                </div>
         </>
     )

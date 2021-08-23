@@ -16,6 +16,13 @@ function Comments () {
         });
         history.push('/review');
     }
+
+    const backFromComments = () => {
+        dispatch({
+            type: 'GO_BACK'
+        });
+        history.push('/supported')
+    }
 //appending data
     return (
         <>
@@ -31,6 +38,10 @@ function Comments () {
                     <button
                         onClick={onButtonClick}
                     >Next
+                    </button>
+                    <button 
+                        onClick={backFromComments}
+                    >Go Back
                     </button>
                 
             </div>

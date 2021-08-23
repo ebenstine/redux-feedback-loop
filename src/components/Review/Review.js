@@ -42,6 +42,15 @@ function Review() {
         history.push('/submitted');
         }
     }
+
+    const backFromReview = () => {
+        dispatch ({
+            type: 'GO_BACK'
+        });
+        history.push('/comments')
+    }
+
+
     return (
         //appending feedback
         <>
@@ -50,6 +59,7 @@ function Review() {
         <h3>Understanding: {feedback[1]}</h3>
         <h3>Support: {feedback[2]}</h3>
         <h3>Comments: {feedback[3]}</h3>
+        <button onClick={backFromReview}>Go Back</button>
         <button onClick={submitFeedback}>Submit</button>
         
         </>
