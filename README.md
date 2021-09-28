@@ -10,4 +10,5 @@ This application creates several input form pages.  Once a value is inputted, th
 
 
 ![Screen Shot 2021-09-28 at 3 57 16 PM (2)](https://user-images.githubusercontent.com/81579996/135164821-95e8063d-cb15-453d-ae4e-d54d0ccce725.png)
-![Screen Shot 2021-09-28 at 3 57 13 PM (2)](https://user-images.githubusercontent.com/81579996/135164831-9028cf75-ef81-477d-a85d-e98c0d26c68e.png)
+
+![Screen Shot 2021-09-28 at 4 01 28 PM (2)](https://user-images.githubusercontent.com/81579996/135165206-b9bc33b2-1e71-44ec-b51d-28b4b2979319.png)
